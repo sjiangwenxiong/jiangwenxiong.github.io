@@ -3,3 +3,9 @@ center				个人中心
 register			注册
 reset				重置密码
 reset_finish		重置密码-成功
+evaluate			评价
+information			个人信息
+myclass				我的课程
+pay					确认支付
+renew				购卡续卡
+vip					我的会员卡
