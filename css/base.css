@@ -49,7 +49,7 @@ body{behavior:url("csshover.htc");font:62.5%/1 "microsoft yahei",arial,tahoma,\5
 body{font-family:"microsoft yahei",Microsoft Yahei;color:#333; /*background:url(../img/bg.png) repeat-y center top; background-size:cover;-webkit-background-size:cover;-moz-background-size:cover;*/}
 
 input,textarea,select,button{-webkit-appearance: none;appearance: none; border-radius:0; -webkit-border-radius:0; font-family:'microsoft yahei';}
-.main{max-width:640px;min-width:320px;margin:0px auto;}
+.main{max-width:640px;min-width:300px;margin:0px auto;}
 
 /*浮动*/
 .fl{float:left;}
