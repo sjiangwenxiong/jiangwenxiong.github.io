@@ -1,0 +1,71 @@
+.main>img{
+    width: 100%;
+    border-bottom: 5px solid #00a0e9;
+}
+.detail p{
+    color: #9e9c9c;
+    margin: 10px;
+    line-height: 20px;
+    height: 20px;
+    margin-bottom: 0;
+}
+.detail p img{
+    height: 20px;
+    margin-top: -2px;
+}
+.detail div:nth-child(1) .fr{
+    font-size: 1.4em;
+    color: #000000;
+}
+.detail{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+button{
+    margin-right: 10px;
+    width: 20%;
+    height: 25px;
+    background: #00a1ea;
+    color: #ffffff;
+    border: none;
+    margin-top: 2px;
+}
+.introduce{
+    background: #eeeeee;
+    padding: 5px 10px;
+    height: 25px;
+    line-height: 25px;
+}
+.introduce img{
+    height: 15px;
+    margin-top: -2px;
+}
+.content{
+    padding: 20px 12px;
+}
+.list{
+    padding:0 10px;
+}
+.list>div{
+    padding-top: 10px;
+    height: 70px;
+    line-height: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+.list img{
+    height: 20px;
+    margin-top: -3px;
+}
+.list .fl{
+    width: 60%;
+}
+.list .fr{
+    text-align: right;
+    width: 40%;
+    color: #9e9c9c;
+}
+.footer{
+    width: 10%;
+    padding: 10px 45%;
+}
+.footer img{width: 100%;}
