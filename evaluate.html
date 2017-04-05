@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/evaluate.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <script src="node_modules/vue/dist/vue.js"></script>
     <title>评价</title>
 </head>
 <body>
@@ -19,28 +21,55 @@
         </div>
     </div>
     <p><img src="image/eva.png">评价</p>
-    <div class="eva">
-        项目评分：
-        <img src="image/star.png">
-    </div>
-    <div class="eva">
-        教练评分：
-        <img src="image/star.png">
-    </div>
-    <div class="eva">
-        分店评分：
-        <img src="image/star.png">
-    </div>
-    <div class="eva">
-        课程评分：
-        <img src="image/star.png">
-    </div>
+    <temp v-for="item in arr">{{item}}:</temp>
     <p><img src="image/explain.png">补充说明</p>
     <div class="footer">
-        <textarea rows="7"></textarea>
-        <span>字数限制200字</span>
+        <textarea rows="7" v-model="str" @keyup="con()"></textarea>
+        <span>字数限制{{limit}}字</span>
     </div>
-    <button onclick="window.location.href='center.html'">提交</button>
 </div>
+<button onclick="window.location.href='center.html'">提交</button>
 </body>
+<script>
+Vue.component('temp',{
+   template:'\
+   <div class="eva" :value="num">\
+        <slot></slot>\
+        <span v-for="(a,index) in star" class="glyphicon glyphicon-star" :class="{blue:index<n}" @click="fun(index)"></span>\
+   </div>',
+    data: function () {
+        return {
+            num:0,
+            n:0,
+            star:[0,1,2,3,4],
+        }
+    },
+    methods:{
+        fun: function (index) {
+            this.n=index+1
+            this.num=index+1
+        }
+    }
+});
+new Vue({
+    el:".main",
+    data:{
+        arr:["项目评分","教练评分","分店评分","课程评分"],
+        str:"",
+        limit:200
+    },
+    methods:{
+        con: function () {
+            this.limit=200-this.str.length
+        }
+    },
+    watch:{
+        str: function (now,old) {
+            if(now.length>200){
+                this.str=old
+            }
+        }
+    }
+})
+</script>
 </html>

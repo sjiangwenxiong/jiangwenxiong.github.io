@@ -50,6 +50,15 @@ button{
     height: 40px;
     background: #00a0e9;
     border: none;
-    font-size: 15px;
-    color: #ffffff;
+    font-size: 1.3em !important;
+    color: #ffffff !important;
+}
+.eva span{
+    color: #eeeeee;
+}
+.eva span:nth-child(1){
+    margin-left: 20px;
+}
+.blue{
+    color: #00a0e9 !important;
 }

@@ -24,7 +24,7 @@
 }
 .content div span{
     border: none;
-    font-size: 15px;
+    font-size: 1.5em;
     line-height: 50px;
     margin-left: 5px;
 }
@@ -43,7 +43,7 @@
 }
 .sum span{
     border: none;
-    font-size: 15px;
+    font-size: 1.5em;
     line-height: 50px;
     margin-left: 5px;
 }
@@ -58,6 +58,11 @@ button{
     height: 40px;
     background: #00a0e9;
     border: none;
-    font-size: 15px;
+    font-size: 1.5em;
     color: #ffffff;
+}
+select{
+    border: none;
+    line-height: 50px;
+    font-size: 1.5em;
 }

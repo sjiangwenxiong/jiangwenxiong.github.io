@@ -14,29 +14,30 @@ ul li{
     text-align: center;
     border-right: 2px solid #eeeeee;
 }
+ul li:nth-child(4){border-right: none;}
 .active{
     border-bottom: 5px solid #00a1ea;
 }
 .content{display: none;}
 .show{display: block !important;}
-.content>div{
+.content #scroller>div:not(#pullUp){
     height: 80px;
     padding: 5px 10px;
     border-bottom: 2px solid #eeeeee;
 }
 .content img{height: 80px;}
-.content>div>div:nth-child(1){
+.content #scroller>div>div:nth-child(1){
     float: left;
     width: 30%;
 }
-.content>div>div:nth-child(2){
+.content #scroller>div>div:nth-child(2){
     float: right;
     width: 60%;
 }
-.content>div>div:nth-child(2)>div:nth-child(2){
+.content #scroller>div>div:nth-child(2)>div:nth-child(2){
     margin-top: 14px;
 }
-span{
+span:not(#pullUp span){
     display: inline-block;
     margin-top: 27px;
     font-size: 14px;

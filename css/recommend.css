@@ -12,7 +12,6 @@ body{
     width: 100%;
     background: url("../image/reco_main.png") no-repeat;
     background-size: contain;
-    height: 540px;
 }
 .bg>div:nth-child(1){
     width: 22%;

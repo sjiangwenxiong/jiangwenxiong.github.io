@@ -6,17 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/index.css"/>
+    <script src="node_modules/vue/dist/vue.js"></script>
     <title>登录</title>
 </head>
 <body>
 <div class="main">
-    <input type="text" placeholder="请输入手机号码"/>
-    <input type="password" placeholder="请输入密码"/>
-    <button><a href="center.html" class="cfff">登录</a></button>
+    <input type="text" placeholder="请输入手机号码" v-model="phone" @keyup="show()"/>
+    <input type="password" placeholder="请输入密码" v-model="password" @keyup="show()"/>
+    <button :class="{active:bol}" @click="fun()">登录</button>
     <div>
         <a class="fl cfff" href="register.html">立即注册</a>
         <a class="fr cfff" href="reset.html">忘记密码</a>
     </div>
 </div>
 </body>
+<script>
+    new Vue({
+        el:".main",
+        data:{
+            phone:"",
+            password:"",
+            bol:false
+        },
+        methods:{
+            show: function () {
+                if(this.phone.length>5&&this.password.length>5){
+                    this.bol=true
+                    this.fun= function () {
+                        window.location.href="center.html"
+                    }
+                }else{
+                    this.bol=false
+                    this.fun= function () {
+                        
+                    }
+                }
+            },
+            fun: function () {
+                
+            }
+        },
+        watch:{
+            phone: function () {
+                this.password=""
+            }
+        }
+    })
+</script>
 </html>

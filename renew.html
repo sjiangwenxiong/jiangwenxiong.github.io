@@ -6,41 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/renew.css"/>
+    <script src="node_modules/vue/dist/vue.js"></script>
     <title>购卡续卡</title>
 </head>
 <body>
-<div class="main">
-    <p>选择会员卡种类 <img src="image/down.png" width="10"></p>
-    <div>
-        <div><img src="image/vip1.png"></div>
+<div id="app">
+    <div class="main">
+        <p>选择会员卡种类 <img src="image/down.png" width="10"></p>
         <div>
-            <p>月卡</p>
-            <p>￥99.00</p>
+            <div><img src="image/vip1.png"></div>
+            <div>
+                <p>月卡</p>
+                <p>￥99.00</p>
+            </div>
+            <button>购买</button>
         </div>
-        <button>购买</button>
-    </div>
-    <div>
-        <div><img src="image/vip2.png"></div>
         <div>
-            <p>月卡</p>
-            <p>￥99.00</p>
+            <div><img src="image/vip2.png"></div>
+            <div>
+                <p>月卡</p>
+                <p>￥99.00</p>
+            </div>
+            <button>购买</button>
         </div>
-        <button>购买</button>
-    </div>
-    <div>
-        <div><img src="image/vip3.png"></div>
         <div>
-            <p>月卡</p>
-            <p>￥99.00</p>
+            <div><img src="image/vip3.png"></div>
+            <div>
+                <p>月卡</p>
+                <p>￥99.00</p>
+            </div>
+            <button>购买</button>
         </div>
-        <button>购买</button>
-    </div>
     <span>
-        <input type="checkbox">
+        <input type="checkbox" @click="chg()">
         我已阅读并同意
         <span onclick="window.location.href='protocol.html'">《轻舞飞扬运会员入会协议》</span>
     </span>
+    </div>
+    <button :class="{active:bol}" @click="fun()">立即购买</button>
 </div>
-<button onclick="window.location.href='pay.html'">立即购买</button>
 </body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            bol:false
+        },
+        methods:{
+            fun: function () {
+
+            },
+            chg: function () {
+                this.bol=!this.bol;
+                if(this.bol==true){
+                    this.fun= function () {
+                        window.location.href="pay.html"
+                    }
+                }else{
+                    this.fun= function () {
+                        
+                    }
+                }
+            }
+        }
+    })
+</script>
 </html>
