@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/apply.css"/>
+    <script src="node_modules/vue/dist/vue.js"></script>
     <title>申请成为教练</title>
 </head>
 <body>
@@ -43,31 +44,31 @@
         <div>
             <img src="image/store.png" style="margin-left: 12px;"/>
             <span>授课分店</span>
-            <select>
-                <option>分店</option>
-                <option>拱墅店</option>
-                <option>余杭店</option>
-                <option>西湖店</option>
-                <option>下城店</option>
-            </select>
+            <span></span>
             <div>
-                分店列表
-                <img src="image/right.png">
+                <select>
+                    <option>分店列表</option>
+                    <option>拱墅店</option>
+                    <option>余杭店</option>
+                    <option>西湖店</option>
+                    <option>下城店</option>
+                </select>
+                <img src="image/right.png" style="transform:rotate(90deg)">
             </div>
         </div>
         <div>
             <img src="image/exp.png" style="margin-left: 14px;height: 18px"/>
             <span>授课经验</span>
-            <select>
-                <option>年限</option>
-                <option>1</option>
-                <option>3</option>
-                <option>5</option>
-                <option>10</option>
-            </select>
+            <span></span>
             <div>
-                选择数字(X年)
-                <img src="image/right.png">
+                <select>
+                    <option>选择数字(X年)</option>
+                    <option>1</option>
+                    <option>3</option>
+                    <option>5</option>
+                    <option>10</option>
+                </select>
+                <img src="image/right.png" style="transform:rotate(90deg)">
             </div>
         </div>
     </div>
@@ -83,18 +84,7 @@
     </div>
     <div>
         <ul class="clearfix">
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
-            <li>瑜伽课</li>
+            <temp v-for="(item,index) in arr">{{item}}</temp>
         </ul>
     </div>
     <div class="content" style="margin-top: 10px">
@@ -110,4 +100,20 @@
 </div>
 <button onclick="window.location.href='teach_center.html'">申请</button>
 </body>
+<script>
+    Vue.component('temp',{
+        template:'<li :class="{active:isac}" @click="isac=!isac"><slot></slot></li>',
+        data: function () {
+            return {
+                isac:false
+            }
+        }
+    });
+    new Vue({
+        el:".main",
+        data:{
+            arr:["瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课"]
+        }
+    })
+</script>
 </html>

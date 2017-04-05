@@ -38,20 +38,22 @@ body{background: #eeeeee;}
     width: 10px;
 }
 select{
+    color: #9e9c9c;
+    border: none;
     margin-left: 5px;
     border-radius: 5px;
 }
 ul{padding: 10px 15px;}
 li{
+    border: 1px solid #00a0e9;
     margin-top: 10px;
-    color: #ffffff;
+    color: #9e9c9c;
     line-height: 23px;
-    background: #00a0e9;
     text-align: center;
     font-size: 0.8em;
     float: left;
     height: 23px;
-    width: 18%;
+    width: 17%;
     margin-left: 6%;
 }
 body>button{
@@ -62,5 +64,9 @@ body>button{
     background: #00a0e9;
     border: none;
     font-size: 15px;
+    color: #ffffff;
+}
+.active{
+    background: #00a0e9;
     color: #ffffff;
 }
