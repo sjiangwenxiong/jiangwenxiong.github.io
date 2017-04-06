@@ -24,7 +24,7 @@
         <div>
             <img src="image/apply_phone.png" style="margin-left: 19px;"/>
             <span>手机</span>
-            <input type="text"/>
+            <input type="text" v-model="phone"/>
             <div>
                 待完善
                 <img src="image/right.png">
@@ -112,7 +112,15 @@
     new Vue({
         el:".main",
         data:{
-            arr:["瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课"]
+            arr:["瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课"],
+            phone:""
+        },
+        watch:{
+            phone: function (now,old) {
+                if(now.match(/[^0-9]/)!=null||now.length>=11){
+                    this.phone=old
+                }
+            }
         }
     })
 </script>

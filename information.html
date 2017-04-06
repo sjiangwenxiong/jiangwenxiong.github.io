@@ -29,7 +29,7 @@
         </div>
         <div>
             <img src="image/phone.png"/>
-            <input type="text" value="18811112222"/>
+            <input type="text" v-model="phone"/>
             <img src="image/right.png">
         </div>
     </div>
@@ -41,13 +41,22 @@
     var vm=new Vue({
         el:".main",
         data:{
-            src:""
+            src:"",
+            phone:18811112222
         },
         methods:{
             fun: function () {
                 console.log(this)
             }
+        },
+            watch:{
+        phone: function (now,old) {
+            console.log(now);
+            if(now.match(/[^0-9]/)!=null||now.length>=11){
+                this.phone=old
+            }
         }
+    }
     });
     var fun= function (btn) {
         var url=btn.value.slice(12);

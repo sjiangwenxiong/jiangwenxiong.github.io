@@ -38,7 +38,10 @@
             }
         },
         watch:{
-            phone: function (now) {
+            phone: function (now,old) {
+                if(now.match(/[^0-9]/)!=null||now.length>=11){
+                    this.phone=old
+                }
                 if(now.match(reg)!=null&&now.length==11){
                     this.issent=true;
                     this.sent=function(){
