@@ -169,7 +169,7 @@
                     <div>
                         <div>
                             <span>{{item.name}}</span>
-                            <button class="fr" v-if="index!=3">{{a}}</button>
+                            <button class="fr" v-if="index!=3" @click="turn(a)">{{a}}</button>
                         </div>
                         <div>
                             <p>教练：{{item.teach}}</p>
@@ -199,6 +199,13 @@
                 {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
                 {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"}
             ]
+        },
+        methods:{
+            turn: function (a) {
+                if(a=="评价"){
+                    window.location.href="evaluate.html"
+                }
+            }
         }
     })
 </script>
