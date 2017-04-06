@@ -30,6 +30,7 @@
 .head+div>div>img{
     height: 92px;
     margin-left: 1px;
+    width: 100%;
 }
 .banner p{
     color: #ffffff;
@@ -74,3 +75,4 @@ button{
     font-size: 15px;
     color: #ffffff;
 }
+.file_posi{position:absolute;width:100%;height:135px;opacity:0;top:30px;left:0px;}

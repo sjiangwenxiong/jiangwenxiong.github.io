@@ -17,7 +17,8 @@
             <div>
                 <img src="image/right.png">
             </div>
-            <img src="image/teach.png">
+            <img src="image/teach.png" id="thumb1">
+            <input id="cert1" type="file" accept="image/*" capture="camera" class="file_posi" />
         </div>
         <div>
             <img src="image/person.png"/>
@@ -39,4 +40,29 @@
 </div>
 <button onclick="window.location.href='teach_center.html'">申请</button>
 </body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/UploadPic.js"></script>
+<script>
+    $(function(){
+        upload("cert1","thumb1");//上传证书1
+    });
+    /*
+     * id file input的id
+     * thumb 缩略图id
+     */
+    function upload(id,thumb){
+        //上传证书
+        var u = new UploadPic();
+        u.init({
+            input: document.getElementById(id),
+            callback: function (base64,fileType) {
+                $("#"+thumb).attr("src",base64);
+                $("#"+thumb).attr("filetype",fileType);
+            },
+            loading: function () {
+                //say_error("等待上传...");
+            }
+        });
+    }
+</script>
 </html>

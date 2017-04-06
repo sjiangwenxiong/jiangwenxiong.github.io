@@ -6,11 +6,12 @@ body{background:#eeeeee;}
     position: relative;
 }
 input{
+    font-size: 1.5em;
     width: 90%;
     height: 40px;border: none;
     margin-top: 1px;
     background-color: #ffffff !important;
-    padding-left: 10%;
+    padding-left: 11.5%;
 }
 input:nth-child(1){background: url("../image/reg1.png") 10px center no-repeat;background-size: 20px;}
 input:nth-child(2){background: url("../image/reg2.png") 10px center no-repeat;background-size: 20px;}
@@ -26,7 +27,7 @@ button{
     color: #ffffff;
 }
 .main a{
-    font-size: 1.2em;
+    font-size: 1.5em;
     position: absolute;
     right: 20px;
     top: 75px;

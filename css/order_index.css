@@ -1,10 +1,12 @@
 .header{
+    font-size: 1.4em;
     width: 100%;
     height: 65px;
     background: #24232c;
     padding-top: 10px;
 }
 .header img{
+    margin-top: -3px;
     height: 15px;
 }
 .header>div{
@@ -21,7 +23,7 @@ select{
 li{
     color: #9e9c9c;
     margin-top: 10px;
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: center;
     float: left;
     height: 25px;
@@ -38,10 +40,11 @@ li:nth-child(1){
     width: 10%;
     text-align: center;
     background: #00a0e9;
-    height: 15px;
-    line-height: 15px;
+    height: 14px;
+    line-height: 14px;
 }
 .content{
+    font-size: 1.4em;
     padding: 5px 10px;
 }
 .content>div{
@@ -57,13 +60,13 @@ li:nth-child(1){
     margin: 5px 10px;
     background: #00a0e9;
     border: none;
-    height: 15px;
+    height: 20px;
     line-height: 15px;
-    width: 18%;
+    width: 20%;
     color: white;
 }
 .content>div>div{
-    margin-top: 90px;
+    margin-top: 80px;
 }
 .content .fl{
     margin-left: 10px;

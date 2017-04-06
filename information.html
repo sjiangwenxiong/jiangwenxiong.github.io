@@ -17,9 +17,10 @@
         </div>
         <div>
             <div>
-                <img :src="src">
+                <img id="thumb1">
             </div>
         </div>
+        <input id="cert1" type="file" accept="image/*" capture="camera" class="file_posi" />
     </div>
     <div class="content">
         <div>
@@ -33,15 +34,36 @@
             <img src="image/right.png">
         </div>
     </div>
-    <input type="file" onchange="fun(this)"/>
 </div>
 <button><a href="center.html" class="cfff">保存</a></button>
 </body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/UploadPic.js"></script>
 <script>
+    $(function(){
+        upload("cert1","thumb1");//上传证书1
+    });
+    /*
+     * id file input的id
+     * thumb 缩略图id
+     */
+    function upload(id,thumb){
+        //上传证书
+        var u = new UploadPic();
+        u.init({
+            input: document.getElementById(id),
+            callback: function (base64,fileType) {
+                $("#"+thumb).attr("src",base64);
+                $("#"+thumb).attr("filetype",fileType);
+            },
+            loading: function () {
+                //say_error("等待上传...");
+            }
+        });
+    }
     var vm=new Vue({
         el:".main",
         data:{
-            src:"",
             phone:18811112222
         },
         methods:{
@@ -52,15 +74,11 @@
             watch:{
         phone: function (now,old) {
             console.log(now);
-            if(now.match(/[^0-9]/)!=null||now.length>=11){
+            if(now.match(/[^0-9]/)!=null||now.length>11){
                 this.phone=old
             }
         }
     }
     });
-    var fun= function (btn) {
-        var url=btn.value.slice(12);
-        vm.src="image/"+url
-    }
 </script>
 </html>

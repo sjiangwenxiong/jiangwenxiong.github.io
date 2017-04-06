@@ -10,9 +10,8 @@
     <script src="node_modules/vue/dist/vue.js"></script>
     <script type="application/javascript" src="node_modules/scroll/iscroll.js"></script>
     <title>我的课程</title>
-    <script>
+    <script type="text/javascript">
         var myScroll,
-                pullDownEl, pullDownOffset,
                 pullUpEl, pullUpOffset,
                 generatedCount=0,t=0,b= 0;
         /**
@@ -21,12 +20,22 @@
          */
         function pullUpAction () {
             setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-                vm.order.push({name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"});
-                vm.order.push({name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"});
-                vm.order.push({name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"});
-                vm.order.push({name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"});
-                vm.order.push({name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"});
-                myScroll.refresh();		// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
+                if(vm.num<arr.order.length){
+                    var n=vm.num
+                    for(i=n;i<n+5;i++){
+                        if(i<=arr.order.length){
+                            vm.order.push(arr.order[i]);
+                            myScroll.refresh();
+                        }else{
+                            document.getElementsByClassName("pullUpLabel")[0].innerHTML="没有更多了"
+                        }
+                        vm.num++
+                    }
+                }else{
+                    document.getElementsByClassName("pullUpLabel")[0].innerHTML="没有更多了"
+                    document.getElementsByClassName("pullUpIcon")[0].remove()
+                }
+                	// 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
             }, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
         }
 
@@ -36,11 +45,10 @@
         function loaded() {
             pullUpEl = document.getElementById('pullUp');
             pullUpOffset = pullUpEl.offsetHeight;
-
+            console.log(pullUpOffset);
             myScroll = new iScroll('wrapper', {
                 scrollbarClass: 'myScrollbar', /* 重要样式 */
                 useTransition: false, /* 此属性不知用意，本人从true改为false */
-                topOffset: pullDownOffset,
                 onRefresh: function () {
                     if (pullUpEl.className.match('loading')) {
                         pullUpEl.className = '';
@@ -48,7 +56,7 @@
                     }
                 },
                 onScrollMove: function () {
-                    console.log(this);
+//                    console.log(this);
                     if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
                         pullUpEl.className = 'flip';
                         pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
@@ -186,6 +194,18 @@
 </div>
 </body>
 <script>
+    var arr={order:[
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+        {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
+    ]};
     var vm=new Vue({
         el:".main",
         data:{
@@ -193,12 +213,13 @@
             list2:["取消预约","评价","取消排队",""],
             n:0,
             order:[
-                {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
-                {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
-                {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
-                {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"},
-                {name:"燃脂炸弹",teach:"Christia",date:"2017/01/01 11:00-12:00"}
-            ]
+                arr.order[0],
+                arr.order[1],
+                arr.order[2],
+                arr.order[3],
+                arr.order[4]
+            ],
+            num:5
         },
         methods:{
             turn: function (a) {

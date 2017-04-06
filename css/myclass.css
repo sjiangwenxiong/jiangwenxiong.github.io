@@ -37,10 +37,14 @@ ul li:nth-child(4){border-right: none;}
 .content #scroller>div>div:nth-child(2)>div:nth-child(2){
     margin-top: 14px;
 }
-span:not(#pullUp span){
+span{
     display: inline-block;
     margin-top: 27px;
-    font-size: 14px;
+    font-size: 1.4em;
+}
+#pullUp span{
+    margin-top: 0px;
+    font-size: 1em;
 }
 button{
     width: 85px;

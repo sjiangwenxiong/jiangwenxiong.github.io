@@ -7,12 +7,19 @@
 .head div:nth-child(2){
     margin: 10px;
 }
-.head p{margin-bottom: 6px;}
-.head p:nth-child(1){color: #00a0e9;}
+.head p{
+    margin-top: 5px;
+    font-size: 1.3em;
+}
+.head p:nth-child(1){
+    color: #00a0e9;
+    font-size: 1.4em;
+}
 .main>p{
-    height: 25px;
+    font-size: 1.3em;
+    height: 30px;
     background: #eeeeee;
-    line-height: 25px;
+    line-height: 30px;
 }
 .main>p>img{
     margin-left: 10px;
@@ -21,14 +28,18 @@
     height: 15px;
 }
 .eva{
-    height: 30px;
-    line-height: 30px;
+    font-size: 1.3em;
+    height: 35px;
+    line-height: 35px;
     margin: 0 10px;
     border-bottom: 1px solid #eeeeee;
 }
 .eva img{
     height: 15px;
     margin-left: 20px;
+}
+.eva span{
+    margin-left: 3px;
 }
 .footer{
     padding: 10px;

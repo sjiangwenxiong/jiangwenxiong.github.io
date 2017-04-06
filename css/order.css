@@ -3,6 +3,7 @@
     border-bottom: 5px solid #00a0e9;
 }
 .detail p{
+    font-size: 1.2em;
     color: #9e9c9c;
     margin: 10px;
     line-height: 20px;
@@ -20,17 +21,20 @@
 .detail{
     padding-bottom: 10px;
     border-bottom: 1px solid #eeeeee;
+    font-size: 1.2em;
 }
 button{
+    font-size: 1.2em;
     margin-right: 10px;
     width: 20%;
-    height: 25px;
+    height: 30px;
     background: #00a1ea;
     color: #ffffff;
     border: none;
     margin-top: 2px;
 }
 .introduce{
+    font-size: 1.6em;
     background: #eeeeee;
     padding: 5px 10px;
     height: 25px;
@@ -41,10 +45,15 @@ button{
     margin-top: -2px;
 }
 .content{
+    font-size: 1.5em;
     padding: 20px 12px;
 }
 .list{
+    font-size: 1.2em;
     padding:0 10px;
+}
+.list .fl p{
+    font-size: 1.2em;
 }
 .list>div{
     padding-top: 10px;

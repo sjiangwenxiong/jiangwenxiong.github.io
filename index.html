@@ -49,7 +49,7 @@
         watch:{
             phone: function (now,old) {
                 this.password=""
-                if(now.match(/[^0-9]/)!=null||now.length>=11){
+                if(now.match(/[^0-9]/)!=null||now.length>11){
                     this.phone=old
                 }
             }
