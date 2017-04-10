@@ -20,7 +20,7 @@ html{font-size:1em;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlig
 body{font-size:0.75em;}
 label{cursor:pointer;}
 a:link, a:visited {text-decoration:none;}
-input,button,select,textarea{outline:none;} 
+input,button,select,textarea{outline:none;}
 textarea{resize:none;}
 
 a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, menu, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt,

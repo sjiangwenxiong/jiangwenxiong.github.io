@@ -46,7 +46,7 @@ Vue.component('temp',{
     },
     methods:{
         fun: function (index) {
-            this.n=index+1
+            this.n=index+1;
             this.num=index+1
         }
     }
@@ -65,6 +65,7 @@ new Vue({
     },
     watch:{
         str: function (now,old) {
+            console.log(now,old)
             if(now.length>200){
                 this.str=old
             }

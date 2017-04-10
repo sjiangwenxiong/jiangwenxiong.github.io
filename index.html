@@ -28,19 +28,19 @@
             password:"",
             bol:false
         },
-        methods:{
-            show: function () {
-                if(this.phone.length==11&&this.password.length>5){
-                    this.bol=true
-                    this.fun= function () {
-                        window.location.href="center.html"
-                    }
-                }else{
-                    this.bol=false
-                    this.fun= function () {
-                        
-                    }
-                }
+                methods:{
+                    show: function () {
+                        if(this.phone.length==11&&this.password.length>5){
+                            this.bol=true;
+                            this.fun= function () {
+                                window.location.href="center.html"
+                            }
+                        }else{
+                            this.bol=false
+                            this.fun= function () {
+
+                            }
+                        }
             },
             fun: function () {
                 
@@ -48,7 +48,7 @@
         },
         watch:{
             phone: function (now,old) {
-                this.password=""
+                this.password="";
                 if(now.match(/[^0-9]/)!=null||now.length>11){
                     this.phone=old
                 }

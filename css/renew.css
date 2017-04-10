@@ -33,14 +33,9 @@
     margin-left: 10px;
     color: #00a0e9;
 }
-.main>div button{
-    width: 60px;
-    height: 25px;
+.main>div input{
     float: right;
-    border: none;
-    background: #00a0e9;
-    color: #ffffff;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-right: 10px;
 }
 .main>span{
@@ -53,13 +48,13 @@
 .main>span span{
     color:#00a0e9;
 }
-.main>span input{
+input{
     background: url("../image/input.png");
     background-size: 15px;
     height: 15px;
     width: 15px;
 }
-.main>span input:checked{
+input:checked{
     background: url("../image/checkbox.png");
     background-size: 15px;
 }
@@ -73,4 +68,8 @@
     font-size: 15px;
     color: #ffffff;
 }
+select{
+    border: none;
+}
 .active{background: #00a0e9 !important;}
+

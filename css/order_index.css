@@ -33,15 +33,18 @@ li{
 }
 li:nth-child(1){
     margin-left: 0;
-    background: white;
 }
-.header>div>span{
-    display: inline-block;
-    width: 10%;
+.header>div>ul span{
+    display: block;
+    width: 100%;
     text-align: center;
     background: #00a0e9;
     height: 14px;
     line-height: 14px;
+    color: white;
+}
+.header>div>span:nth-child(3){
+    margin-left: 0;
 }
 .content{
     font-size: 1.4em;
@@ -95,4 +98,7 @@ li:nth-child(1){
 .content>div:nth-child(3){
     background: url("../image/order3.png");
     background-size: cover;
+}
+.bgw{
+    background: white;
 }

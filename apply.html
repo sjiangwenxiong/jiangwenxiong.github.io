@@ -15,9 +15,9 @@
         <div>
             <img src="image/person.png"/>
             <span>姓名</span>
-            <input type="text"/>
+            <input type="text" v-model="t1"/>
             <div>
-                待完善
+                <span v-if="t1.length<1">待完善</span>
                 <img src="image/right.png">
             </div>
         </div>
@@ -26,16 +26,16 @@
             <span>手机</span>
             <input type="text" v-model="phone"/>
             <div>
-                待完善
+                <span  v-if="phone.length<1">待完善</span>
                 <img src="image/right.png">
             </div>
         </div>
         <div>
             <img src="image/age.png" style="margin-left: 12px;"/>
             <span>年龄</span>
-            <input type="text"/>
+            <input type="text" v-model="t2"/>
             <div>
-                待完善
+                <span v-if="t2.length<1">待完善</span>
                 <img src="image/right.png">
             </div>
         </div>
@@ -114,7 +114,10 @@
         data:{
             //擅长课程放在arr.jason的class中
             arr:{class:["瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课","瑜伽课"]},
-            phone:""
+            phone:"",
+            t1:"",
+            t2:"",
+            t3:""
         },
         watch:{
             phone: function (now,old) {

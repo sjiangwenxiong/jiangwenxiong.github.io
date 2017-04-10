@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/order_index.css"/>
+    <script src="node_modules/vue/dist/vue.js"></script>
     <title>一周预约</title>
 </head>
 <body>
@@ -27,49 +28,73 @@
                 </div>
             </div>
             <ul>
-                <li>日</li>
-                <li>一</li>
-                <li>二</li>
-                <li>三</li>
-                <li>四</li>
-                <li>五</li>
-                <li>六</li>
+                <li v-for="(item,index) in week" :class="{bgw:index==n}" @click="n=index">
+                    {{item}}
+                    <span v-if="index==n">{{19+index}}</span>
+                </li>
             </ul>
-            <span>19</span>
+
         </div>
     </div>
-    <div class="content">
-        <div>
-            <input type="button" value="燃脂炸弹"/>
+    <div class="content" v-for="(value,key,index) in arr.class_order" v-if="index==n">
+        <div v-for="item in value">
+            <input type="button" :value="item.class"/>
             <div class="clearfix">
                 <div class="fl">
-                    <p>Christia</p>
-                    <p>时间:11:00-12:00</p>
+                    <p>{{item.teach}}</p>
+                    <p>时间:{{item.date}}</p>
                 </div>
-                <button class="fr" onclick="window.location.href='oder.html'">预约</button>
-            </div>
-        </div>
-        <div>
-            <input type="button" value="尊巴热舞"/>
-            <div class="clearfix">
-                <div class="fl">
-                    <p>Christia</p>
-                    <p>时间:11:00-12:00</p>
-                </div>
-                <button class="fr"  onclick="window.location.href='oder_line.html'">排队</button>
-            </div>
-        </div>
-        <div>
-            <input type="button" value="有氧塑性"/>
-            <div class="clearfix">
-                <div class="fl">
-                    <p>Christia</p>
-                    <p>时间:11:00-12:00</p>
-                </div>
-                <button class="fr" onclick="window.location.href='oder.html'">预约</button>
+                <button class="fr" onclick="window.location.href='oder.html'">{{item.way}}</button>
             </div>
         </div>
     </div>
 </div>
 </body>
+<script>
+    var vm=new Vue({
+        el:".main",
+        data:{
+            week:["日","一","二","三","四","五","六"],
+            n:0,
+            arr:{class_order:{//可从后台获取，每周课程内容以及状态在class_order的week1-7中
+                week7:[
+                    {class:"周日有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"排队"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ],
+                week1:[
+                    {class:"周一有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ],
+                week2:[
+                    {class:"周二有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ],
+                week3:[
+                    {class:"周三有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ],
+                week4:[
+                    {class:"周四有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ],
+                week5:[
+                    {class:"周五有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ],
+                week6:[
+                    {class:"周六有约",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"尊巴热舞",teach:"Christia",time:"11:00-12:00",way:"预约"},
+                    {class:"燃脂炸弹",teach:"Christia",time:"11:00-12:00",way:"预约"}
+                ]
+            }
+            }
+        }
+    })
+</script>
 </html>

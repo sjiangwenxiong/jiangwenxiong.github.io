@@ -34,10 +34,14 @@ body{background: #eeeeee;}
     color: #9e9c9c;
     float: right;
 }
-.content input{
+.content>div>input{
     margin-left: 5px;
     border: none;
     width: 40%;
+}
+.content>div>div>input{
+    border: none;
+    text-align: right;
 }
 .content div div:nth-child(3) img{
     margin-left: 5px;

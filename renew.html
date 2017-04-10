@@ -12,30 +12,23 @@
 <body>
 <div id="app">
     <div class="main">
-        <p>选择会员卡种类 <img src="image/down.png" width="10"></p>
-        <div>
-            <div><img src="image/vip1.png"></div>
+        <p>
+            <select v-model="sel">
+                <option>选择会员卡种类</option>
+                <option>年卡</option>
+                <option>季卡</option>
+                <option>月卡</option>
+                <option>所有</option>
+            </select>
+            <img src="image/down.png" width="10">
+        </p>
+        <div v-for="item in arr.card" v-if="item.name==sel||sel=='选择会员卡种类'||sel=='所有'">
+            <div><img :src="item.img"></div>
             <div>
-                <p>月卡</p>
-                <p>￥99.00</p>
+                <p>{{item.name}}</p>
+                <p>￥{{item.pri}}</p>
             </div>
-            <button>购买</button>
-        </div>
-        <div>
-            <div><img src="image/vip2.png"></div>
-            <div>
-                <p>月卡</p>
-                <p>￥99.00</p>
-            </div>
-            <button>购买</button>
-        </div>
-        <div>
-            <div><img src="image/vip3.png"></div>
-            <div>
-                <p>月卡</p>
-                <p>￥99.00</p>
-            </div>
-            <button>购买</button>
+            <input type="radio" name="buy"/>
         </div>
     <span>
         <input type="checkbox" @click="chg()">
@@ -50,7 +43,13 @@
     new Vue({
         el:"#app",
         data:{
-            bol:false
+            bol:false,
+            sel:"选择会员卡种类",
+            arr:{card:[
+                {name:"年卡",pri:"99.00",img:"image/vip1.png"},
+                {name:"季卡",pri:"99.00",img:"image/vip2.png"},
+                {name:"月卡",pri:"99.00",img:"image/vip3.png"},
+            ]}
         },
         methods:{
             fun: function () {
@@ -64,9 +63,14 @@
                     }
                 }else{
                     this.fun= function () {
-                        
+
                     }
                 }
+            }
+        },
+        watch:{
+            sel: function (a,b) {
+                console.log(a,b)
             }
         }
     })
